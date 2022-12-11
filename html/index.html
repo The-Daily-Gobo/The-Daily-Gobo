@@ -1,62 +1,65 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="icon" href="../images/icon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../css/gobo.css">
     <title>The Daily Gobo</title>
-    <link href="/css/main.css" rel="stylesheet" />
-    <link href="/css/dark.css" rel="stylesheet" class="darkMode" />
-    <script src="/js/storage.js"></script>
-    <script src="/js/emojiparser.js"></script>
-  </head>
-  <body>
-    <div id="navigation">
-      <ul class="nav">
-        <li class="logo"><a arial-label="Scratch" href="/"></a></li>
-        <li><a href="/">The Daily Gobo</a></li>
-        <li class="right"><a href="/verify">Log In</a></li>
-        <li class="modeSwitch" onclick="darkMode()"><a>🌒</a></li>
-      </ul>
-    </div>
-    <div id="view">
-      <div class="box">
-        <div class="box-header">
-          <h4>What is The Daily Gobo?</h4>
-          <h5></h5>
-        </div>
-        <div class="box-content">
-          <p>
-            The Daily Gobo is a blog for all things Scratch! You can contribute
-            to the blog, and even favorite blog posts! You can find out all
-            about the current news and so much more!
-          </p>
-        </div>
-      </div>
-      <div class="box">
-        <div class="box-header">
-          <h4>Trending Blogs</h4>
-          <h5></h5>
-        </div>
-        <div class="box-content">
-          <p>
-            Sign in Scratch by clicking the "Log In" button in the top right to
-            access your feed!
-          </p>
-        </div>
-      </div>
-    </div>
-  </body>
-  <script>
-    if (storage.getItem("lightMode")) {
-      stylesheet.disabled = true;
-    }
-    function darkMode() {
-      var stylesheet = document.querySelector(".darkMode");
-      if (stylesheet.disabled) {
-        storage.setItem("lightMode", false);
-        stylesheet.disabled = false;
-      } else {
-        storage.setItem("lightMode", true);
-        stylesheet.disabled = true;
+    <style>
+      #error1 {
+        top:40em;
+        display: block;
+        position: relative;
+        opacity: 0;
+        color:black;
+        animation-delay: 10s;
+        animation-name: show;
+        animation-duration: 100ms;
+        animation-fill-mode: forwards;
+
       }
-    }
-  </script>
+      @keyframes show {
+        0% {
+          display: none;
+          opacity: 0;
+        }
+
+        1% {
+          display: block;
+          opacity: 0;
+        }
+
+        100% {
+          display: block;
+          opacity: 1;
+        }
+      }
+
+      #error2 {
+        top:41em;
+        display: block;
+        position: relative;
+        opacity: 0;
+        color:black;
+        animation-delay: 10s;
+        animation-name: show;
+        animation-duration: 100ms;
+        animation-fill-mode: forwards;
+
+      }
+
+
+    </style>
+  </head>
+  <body style="background-color: #607CFF;">
+    <script src="../node_modules/kotlin/kotlin.js"></script>
+    <script src="../js/agentdetect.js"></script>
+
+    
+    <img src="../images/loading.svg" class="loading center">
+    <img class="center" width="150" src="../images/icon.svg">
+    <p class="center-text text-bold" id="error1">It looks like Gobo probaly encountered an error, try refreshing page or if you have slow internet connection try waiting if there's no specific error under it then error code is: (errcode:1)</p>
+    <noscript>
+      <p class="center-text text-bold" id="error2">It looks like JavaScript technology is blocked by your browser<br>Try to whitelist our site in your js blocker and in your browser settings (errcode:2)</p>
+    </noscript>
+  </body>
 </html>
